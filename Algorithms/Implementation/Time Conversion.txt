@@ -1,0 +1,45 @@
+/*
+Given a time in 12-hour AM/PM format, convert it to military (24-hour) time.
+Sample Input
+07:05:45PM
+Sample Output
+19:05:45
+*/
+
+
+import java.io.*;
+import java.util.*;
+import java.text.DecimalFormat;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner scan= new Scanner(System.in);
+       String time= scan.next();
+       //System.out.println(time);
+        int hh = Integer.valueOf(time.subSequence(0,2).toString());
+        int mm = Integer.valueOf(time.subSequence(3,5).toString());
+        int ss = Integer.valueOf(time.subSequence(6,8).toString());
+       DecimalFormat formatter = new DecimalFormat("00");
+       //int h = Integer.valueOf(formatter.format(hh));
+        String m = (formatter.format(mm));
+        String s = (formatter.format(ss));
+        
+        char t= time.charAt(8);
+        
+        if(t=='A')
+        {
+            if(hh==12){System.out.println((formatter.format(12-hh))+":"+m+":"+s);}
+            else{System.out.println((formatter.format(hh))+":"+m+":"+s);}
+        
+        }
+        if(t=='P')
+       { 
+            if(hh==12){System.out.println((formatter.format(hh))+":"+m+":"+s);}
+            else {System.out.println((formatter.format(hh+12))+":"+m+":"+s);}
+        }
+     //System.out.println(t);
+     //System.out.println(ss);
+    }
+}

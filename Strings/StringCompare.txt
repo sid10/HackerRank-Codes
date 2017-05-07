@@ -1,0 +1,26 @@
+
+//https://www.hackerrank.com/challenges/java-string-compare
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    
+    Scanner sc=new Scanner(System.in);
+    String str=sc.next();
+    int n=sc.nextInt();
+    String small=str.substring(0,n);
+    String large=str.substring(0,n);
+    for(int i=0;i<=str.length()-n;i++)
+    {
+        if(small.compareTo(str.substring(i,i+n))>1)
+            small=str.substring(i,i+n);
+        if(large.compareTo(str.substring(i,i+n))<1)
+            large=str.substring(i,i+n);
+    }
+    System.out.println(small+"\n"+large);
+}
+    }

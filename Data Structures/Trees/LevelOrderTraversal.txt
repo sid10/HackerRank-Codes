@@ -1,0 +1,25 @@
+   /* 
+    
+    class Node 
+       int data;
+       Node left;
+       Node right;
+   */
+   void LevelOrder(Node root)
+  
+    {
+      ArrayList<Node> list = new ArrayList<Node>();
+       
+      if(root!=null)
+          list.add(root);
+       while(list.size()!=0){
+           System.out.print(list.get(0).data+" ");
+           if(list.get(0).left != null)
+               list.add(list.get(0).left);
+           if(list.get(0).right != null)
+               list.add(list.get(0).right);
+           list.remove(list.get(0));
+       }
+      
+    }
+      

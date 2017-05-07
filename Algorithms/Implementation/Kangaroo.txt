@@ -1,0 +1,40 @@
+/*
+Problem summary:
+There are two kangaroos on an x-axis ready to jump in the positive direction (i.e, toward positive infinity). The first kangaroo starts at location x1 and moves at a rate of v1 meters per jump. The second kangaroo starts at location x2 and moves at a rate of v2 meters per jump. Given the starting locations and movement rates for each kangaroo, can you determine if they'll ever land at the same location at the same time?
+
+Sample Input:
+0 3 4 2
+
+Sample Ouput:
+YES
+*/
+
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int x1 = in.nextInt();
+        int v1 = in.nextInt();
+        int x2 = in.nextInt();
+        int v2 = in.nextInt();
+        int ctr=0,i,j;
+        //double inf = Double.POSITIVE_INFINITY;
+        if(x1<=x2 && v1<v2){System.out.println("NO");}
+        
+        else { 
+            for( i=x1, j=x2;i>=0 && j>0;i+=v1,j+=v2)
+         {
+            if(i==j){System.out.println("YES"); ctr=i; break;}
+               
+        }
+        if(ctr!=i){System.out.println("NO");}}
+        
+    }
+}

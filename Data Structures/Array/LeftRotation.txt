@@ -1,0 +1,36 @@
+/*
+
+https://www.hackerrank.com/challenges/array-left-rotation
+
+*/
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner scan=new Scanner(System.in);
+        int n=scan.nextInt();
+        int d=scan.nextInt();
+        int arr[]=new int[n];
+        int temp;
+        for(int i=0;i<n;i++)
+            {
+            arr[i]=scan.nextInt();
+        }
+        for(int j=0;j<d;j++)
+            { temp=arr[0];
+            for(int k=0;k<n-1;k++)
+                {
+                arr[k]=arr[k+1];
+            }arr[n-1]=temp;
+        }
+        for(int l=0;l<n;l++)
+            {
+            System.out.print(arr[l]+" ");
+        }
+        
+    }
+}

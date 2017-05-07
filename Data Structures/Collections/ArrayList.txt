@@ -1,0 +1,38 @@
+//https://www.hackerrank.com/challenges/java-arraylist
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner scan= new Scanner (System.in);
+        int n = scan.nextInt();
+        ArrayList<ArrayList<Integer>> list = new ArrayList<>();
+        for(int r= 0;r<n;r++)
+            {
+            int d=scan.nextInt();
+            ArrayList<Integer> num=new ArrayList<>();
+            
+            for(int c=0;c<d;c++){
+                num.add(scan.nextInt());
+            }
+            list.add(num);
+        }
+        int q=scan.nextInt();
+        
+        for(int i=0;i<q;i++)
+            {
+            int x=scan.nextInt();
+            int y=scan.nextInt();
+            try{
+                int temp=list.get(x-1).get(y-1);
+                System.out.println(temp);
+            }
+            catch (IndexOutOfBoundsException e) {
+                System.out.println("ERROR!");
+            }
+        }
+        
+    }
+}

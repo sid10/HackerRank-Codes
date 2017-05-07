@@ -1,0 +1,43 @@
+//https://www.hackerrank.com/challenges/maximum-element
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner in=new Scanner(System.in);
+        int n=in.nextInt();
+        Stack s=new Stack();
+         long max=-1;
+        for(int i=0;i<n;i++){
+           
+            int t=in.nextInt();
+            switch(t){
+                
+                case 1:long x=in.nextInt();
+                       s.push(x);
+                        if(x>max)  max=x;
+                        
+                       break;
+                case 2: long val=(long)s.peek();
+                        s.pop();
+                        if(val==max){
+                            max=-1;
+                            Iterator<Long> it=s.iterator();
+                            while(it.hasNext()){
+                                long temp=it.next();
+                                if(max<temp){
+                                    max=temp;
+                                }  
+                            }
+                        }
+                        break;
+                case 3:System.out.println(max);
+            }
+        }
+    }
+}

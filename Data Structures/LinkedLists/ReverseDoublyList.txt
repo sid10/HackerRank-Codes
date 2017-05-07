@@ -1,0 +1,36 @@
+/* 6 4 2 1 
+  1  2   4  6 
+  
+  Reverse a doubly list
+  head pointer input could be NULL as well for empty list
+  Node is defined as 
+  class Node {
+     int data;
+     Node next;
+     Node prev;
+  }   6  4  2  
+  st=4 , t=4, n=null, p=4,
+  st=2, t=2, n=6, p=2
+*/
+
+Node Reverse(Node head) {
+    
+    
+    Node temp = null;
+   // Node curr = head;
+    
+    if(head == null) return head;
+    
+    while(head != null)
+    {
+        head.prev = head.next;
+        head.next = temp;
+        temp = head;
+        head = head.prev;
+    }
+    
+    return temp;
+  
+    
+
+}

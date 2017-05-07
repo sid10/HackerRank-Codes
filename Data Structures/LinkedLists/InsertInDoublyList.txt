@@ -1,0 +1,53 @@
+/*
+  Insert in a Doubly list
+  head pointer input could be NULL as well for empty list
+  Node is defined as 
+  class Node {
+     int data;
+     Node next;
+     Node prev;
+  }
+*/
+
+Node SortedInsert(Node head,int data) {
+    Node temp=new Node();
+    temp.data=data;
+    temp.next=null;
+    temp.prev=null;
+
+  if (head==null){ head=temp; return head;}
+  if (head.next==null && temp.data<head.data){ temp.next=head; head.prev=temp; return temp;}
+  if (head.next==null && temp.data>=head.data){ head.next=temp; temp.prev=head; return head;}
+    Node start=head; 
+    Node pprev=head;
+    
+     
+  while(head!=null){
+      if(head.data<temp.data)
+     { 
+         pprev=head;
+         head=head.next; 
+     }
+     else
+     break;
+  }  
+   if(head!=null)
+    {   
+        Node lol=head.prev;
+        lol.next=temp;
+          head.prev=temp;
+          temp.next=head;
+          temp.prev=lol;
+       
+        
+          return start; 
+   }
+    else
+    {
+       pprev.next=temp;
+    temp.next=null;
+    temp.prev=pprev;
+        return start;
+    }
+        
+}

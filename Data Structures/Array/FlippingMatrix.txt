@@ -1,0 +1,47 @@
+//https://www.hackerrank.com/challenges/flipping-the-matrix
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc=new Scanner(System.in);
+        int tc=sc.nextInt();
+       
+        for(int z=0;z<tc;z++){
+            int n=sc.nextInt();
+            int[][] mat=new int[2*n][2*n];
+            for(int i=0;i<2*n;i++){
+                for(int j=0;j<2*n;j++){
+                    mat[i][j]=sc.nextInt();
+                }
+            }
+            long sum=0,maxe=0;
+            
+            
+            for(int i=0;i<n;i++){
+                for(int j=0;j<n;j++){
+                    maxe=mat[i][j];
+                    
+                    maxe=Math.max(maxe, Math.max(mat[(2*n)-1-i][j], mat[i][(2*n)-1-j]));
+                    maxe=Math.max(maxe, mat[(2*n)-1-i][(2*n)-1-j]);
+                     sum+=maxe;
+                }
+               
+            }
+            
+              
+           
+         System.out.println(sum);
+            
+        }
+       
+        
+        
+    }
+}

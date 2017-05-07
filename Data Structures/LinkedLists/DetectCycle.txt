@@ -1,0 +1,21 @@
+/*
+Detect a cycle in a linked list. Where Max list size is 100. Note that the head pointer may be 'null' if the list is empty.
+
+A Node is defined as: 
+    class Node {
+        int data;
+        Node next;
+    }
+*/
+
+boolean hasCycle(Node head) {
+      if(head==null) return false;
+      int cnt=0;
+        while(cnt<100){
+            if(head.next == null) return false;
+            cnt++;
+            head=head.next;
+        }
+        return true;
+    
+}

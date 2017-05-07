@@ -1,0 +1,39 @@
+//https://www.hackerrank.com/challenges/caesar-cipher-1
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc=new Scanner(System.in);
+        int n = sc.nextInt();
+         sc.nextLine();
+        String s=sc.nextLine();
+       
+        int k=sc.nextInt();
+        if(k>26) 
+            k=k%26; 
+        for(int i=0;i<s.length();i++){
+          
+            if(s.charAt(i) >='a' && s.charAt(i) <= 'z'){
+                int sum=(int)s.charAt(i)+k;
+                if(!(sum>=97 && sum<=122))                 
+                     sum=sum-26;   
+                System.out.print((char)sum);
+                 
+            }
+            else if(s.charAt(i) >='A' && s.charAt(i) <= 'Z'){
+                int sum=(int)s.charAt(i)+k;
+                if(!(sum>=65 && sum<=90))                 
+                    sum=sum-26;
+                System.out.print((char)sum);
+            }
+            else
+                System.out.print(s.charAt(i));
+        }
+        
+        
+    }
+}

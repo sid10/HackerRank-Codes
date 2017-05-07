@@ -1,0 +1,31 @@
+/*
+  Code to print the top view of a tree.
+   class Node 
+       int data;
+       Node left;
+       Node right;
+*/
+void top_view(Node root)
+{
+    left_print(root);
+    System.out.print(root.data+" ");
+  
+    while(root.right!=null){
+        System.out.print(root.right.data+" ");
+        root=root.right;
+    }
+    
+    
+}
+void left_print(Node root)
+{    
+    if(root.left!=null)
+    {
+        left_print(root.left);
+        System.out.print(root.left.data+" ");
+        
+    }
+}
+
+
+

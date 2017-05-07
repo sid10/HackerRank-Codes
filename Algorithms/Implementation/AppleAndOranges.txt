@@ -1,0 +1,42 @@
+/*
+
+https://www.hackerrank.com/challenges/apple-and-orange
+
+*/
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int s = in.nextInt(); //house start
+        int t = in.nextInt();  // house end
+        int a = in.nextInt(); // origin of apple
+        int b = in.nextInt(); // origin of orange
+        int m = in.nextInt();  // no of apple
+        int n = in.nextInt();  // no of oranges
+        int ta=0, to=0;
+        int[] apple = new int[m];
+        for(int apple_i=0; apple_i < m; apple_i++){
+            apple[apple_i] = in.nextInt();
+        }
+        int[] orange = new int[n];
+        for(int orange_i=0; orange_i < n; orange_i++){
+            orange[orange_i] = in.nextInt();
+        }
+        for(int i=0;i<m;i++)
+            {
+            if(a+apple[i]>=s && a+apple[i]<=t){ta++;}
+        }
+        for(int i=0;i<n;i++)
+            {
+            if(b+orange[i]>=s && b+orange[i]<=t){to++;}
+        }
+        System.out.println(ta);
+        System.out.println(to);
+    }
+}
