@@ -1,0 +1,45 @@
+// Check whether the given bracket sequence is balanced or not
+
+
+boolean regularBracketSequence1(String sequence) {
+Stack<Character> st=new Stack<Character>();
+    for(int i=0;i<sequence.length();i++)
+    {
+        switch(sequence.charAt(i))
+        {
+            
+            case '(':
+	    case '[':
+	    case '{':
+	    case '<':
+            st.push(sequence.charAt(i));
+                break;
+  
+             case')':
+                if(st.isEmpty()) return false;
+                if(st.peek()!='(') return false;
+                else st.pop(); break;
+	     case']':
+                if(st.isEmpty()) return false;
+                if(st.peek()!='[') return false;
+                else st.pop(); break;
+	     case'}':
+                if(st.isEmpty()) return false;
+                if(st.peek()!='{') return false;
+                else st.pop(); break;
+             case'>':
+                if(st.isEmpty()) return false;
+                if(st.peek()!='<') return false;
+                else st.pop(); break;
+        }
+        
+        
+    }
+    if(st.isEmpty())
+    return true;
+    
+    else
+        return false;
+    
+    
+}
